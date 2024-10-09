@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australian Labor Market Overview</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+
+    <link rel="stylesheet" type="text/css" href="files/css/style.css" media="all">
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="sub_container">
+            <div class="header">
+                <h1>Australian Labor Market</h1>
+            </div>
+            <div class="intro">
+                <div class="text" style="padding-left: 50px; padding-right: 100px;">
+                    <!-- <img src="./files/images/icon1.png" alt="Icon 1" class="inline-icon" style="width: 70px; height: 70px;">  -->
+                    <p>
+                        The Australian labor market is a key driver of the nation's economic stability, representing diverse industries and employment sectors. Metrics such as <strong>unemployment rates</strong> and <strong>employment participation</strong> help understand workforce health.
+                    </p>
+                    <!-- <img src="./files/images/icon2.png" alt="Icon 2" class="inline-icon" style="width: 70px; height: 70px;">  -->
+                    <p>
+                        Understanding labor market trends is critical for addressing economic challenges. This dashboard highlights employment and unemployment trends, participation rates, and workforce transitions across various regions of Australia.
+                    </p>
+                </div>
+                <center>
+                    <img src="./files/images/aus.png" alt="Australia Logo" style="width: 400px;">
+                </center>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="sub_container">
+            <div class="header">
+                <h1>Employment Trends</h1>
+            </div>
+    
+            <center>
+                <div style="text-align: center; margin-top: 40px;" id="vis1">
+                </div>
+            </center>
+    
+            <div class="intro">
+                <p style="margin-left: 100px; margin-right: 100px; text-align: center;">
+                    <img src="./files/images/icon3.png" alt="Icon 3" class="inline-icon" style="width: 70px; height: 70px;"> 
+                    In 2020, states are more clustered towards higher unemployment rates, with underemployment also being notably higher in many regions. <br> <br>
+                    <img src="./files/images/icon4.png" alt="Icon 4" class="inline-icon" style="width: 70px; height: 70px;"> 
+                    By 2024, the overall unemployment rate has decreased significantly across most states, with a noticeable shift towards a lower underemployment rate as well, indicating a healthier labor market.
+                </p>
+            </div>
+    
+            <center>
+                <div style="text-align: center; margin-top: 40px;" id="vis6">
+                </div>
+            </center>
+    
+            <center>
+                <div style="text-align: center; margin-top: 40px;" id="vis8">
+                </div>
+            </center>
+    
+
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="sub_container">
+            <div class="header">
+                <h1>Unemployment Trends</h1>
+            </div>
+    
+            <div class="intro">
+                <p>
+                    <img src="./files/images/icon5.png" alt="Icon 5" class="inline-icon" style="width: 70px; height: 70px;"> 
+                    In 2020, states are more clustered towards higher unemployment rates, with underemployment also being notably higher in many regions.
+                </p>
+                <p>
+                    <img src="./files/images/icon6.png" alt="Icon 6" class="inline-icon" style="width: 70px; height: 70px;"> 
+                    In 2020, states are more clustered towards higher unemployment rates, with underemployment also being notably higher in many regions.
+                </p>
+            </div>
+    
+            <div class="header">
+                <div id="vis2">
+    
+                </div>
+            </div>
+
+            <hr>
+
+
+            <div class="header">
+                <center>
+                    <div id="vis7">
+    
+                    </div>
+                </center>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="sub_container">
+            <div class="header">
+                <h1>Unemployment Trends</h1>
+            </div>
+    
+            <div class="two-column-layout">
+                <!-- First Graph Section -->
+                <div class="graph-container">
+                    <div id="vis3"></div>
+                    <p class="graph-text">
+                        <img src="./files/images/icon7.png" alt="Icon 7" class="inline-icon" style="width: 70px; height: 70px;"> <br> 
+                        Graph 1: This graph shows the employment and unemployment trends in Australia from 2020 to 2024. It highlights the underemployment rates and how they have shifted over the years.
+                    </p>
+                </div>
+    
+                <!-- Second Graph Section -->
+                <div class="graph-container">
+                    <div id="vis4"></div>
+                    <p class="graph-text">
+                        <img src="./files/images/icon8.png" alt="Icon 8" class="inline-icon" style="width: 70px; height: 70px;"> 
+                        Graph 2: This graph compares unemployment rates by state, showing regional differences and how unemployment has evolved over time.
+                    </p>
+                </div>
+            </div>
+            <hr>
+
+                <!-- Second Graph Section -->
+                <div class="graph-container" style="margin-top: 30px">
+                    <div id="vis5"></div>
+                    <p class="graph-text" style="margin-top: 10px;">
+                        <img src="./files/images/icon1.png" alt="Icon 8" class="inline-icon" style="width: 70px; height: 70px;"> 
+                        Graph 2: This graph compares unemployment rates by state, showing regional differences and how unemployment has evolved over time.
+                    </p>
+                </div>
+
+        </div>
+    </div>
+</body>
+
+
+<script type="text/javascript">
+
+
+    var spec1 = "./files/js/bubble.json";
+    var spec2 = "./files/js/line.json";
+    var spec3 = "./files/js/donut1.json";
+    var spec4 = "./files/js/donut2.json";
+    var spec5 = "./files/js/flow.json";
+    var spec6 = "./files/js/aus.json";
+    var spec7 = "./files/js/globe.json";
+    var spec8 = "./files/js/multi_line.json";
+    // var spec6 = "VIS-2/js/podiums_line_chart.vg.json"
+    // var spec7 = "VIS-2/js/wins_line_chart.vg.json"
+    // var spec8 = "VIS-2/js/safety_cars_europe.vg.json"
+
+    vegaEmbed('#vis1', spec1, {"actions": false})
+    vegaEmbed('#vis2', spec2, {"actions": false})
+    vegaEmbed('#vis3', spec3, {"actions": false})
+    vegaEmbed('#vis4', spec4, {"actions": false})
+    vegaEmbed('#vis5', spec5, {"actions": false})
+    vegaEmbed('#vis6', spec6, {"actions": false})
+    vegaEmbed('#vis7', spec7, {"actions": false})
+    vegaEmbed('#vis8', spec8, {"actions": false})
+    // vegaEmbed('#bubble_chart', spec3, {"actions": false})
+    // vegaEmbed('#hamilton_bump', spec4, {"actions": false})
+
+</script>
+
+</html>

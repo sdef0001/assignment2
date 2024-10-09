@@ -1,0 +1,75 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A donut chart showing the distribution of advertised occupations in Australia.",
+    "data": {
+        "values": [
+            {
+                "occupation": "Construction",
+                "percentage": 9.04
+            },
+            {
+                "occupation": "Retail Trade",
+                "percentage": 9.28
+            },
+            {
+                "occupation": "Professional, Scientific and Technical Services",
+                "percentage": 9.07
+            },
+            {
+                "occupation": "Public Administration and Safety",
+                "percentage": 6.79
+            },
+            {
+                "occupation": "Education and Training",
+                "percentage": 8.8
+            },
+            {
+                "occupation": "Health Care and Social Assistance",
+                "percentage": 15.63
+            },
+            {
+                "occupation": "Other Occupations",
+                "percentage": 41.39
+            }
+        ]
+    },
+    "mark": {
+        "type": "arc",
+        "innerRadius": 50
+    },
+    "encoding": {
+        "theta": {
+            "field": "percentage",
+            "type": "quantitative",
+            "stack": true
+        },
+        "color": {
+            "field": "occupation",
+            "type": "nominal",
+            "legend": {
+                "title": "Occupation"
+            }
+        },
+        "tooltip": [
+            {
+                "field": "occupation",
+                "type": "nominal",
+                "title": "Occupation"
+            },
+            {
+                "field": "percentage",
+                "type": "quantitative",
+                "title": "Percentage (%)"
+            }
+        ]
+    },
+    "title": {
+        "text": "Australian Labor Market Trends (2020-2024)",
+        "fontSize": 20,
+        "color": "black"
+      },
+      "width": 200,
+      "height": 200,
+    "config": {},
+    "background": "#F5F5F5"
+}

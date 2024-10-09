@@ -1,0 +1,115 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Scatter plot with year selector showing Employment to Population Ratio vs. Unemployment Rate by state, with bubble size representing underemployment rate.",
+    "data": {
+      "url": "https://raw.githubusercontent.com/sdef0001/assignment1/refs/heads/main/bubble_data.csv",
+      "format": {"type": "csv"}
+    },
+    "title": {
+      "text": "Australian Labor Market Trends (2020-2024)",
+      "fontSize": 30,
+      "color": "black"
+    },
+    "width": 700,
+    "height": 400,
+    "params": [
+      {
+        "name": "yearSelector",
+        "value": 2020,
+        "bind": {
+          "input": "select",
+          "options": [2020, 2021, 2022, 2023, 2024],
+          "name": "Select Year: "
+        }
+      }
+    ],
+    "transform": [
+      {
+        "filter": "datum.Year == yearSelector"
+      }
+    ],
+    "mark": "circle",
+    "encoding": {
+      "x": {
+        "field": "Employment to population ratio",
+        "type": "quantitative",
+        "title": "Employment to Population Ratio (%)",
+        "scale": {
+          "domain": [55, 75]
+        }
+      },
+      "y": {
+        "field": "Unemployment rate",
+        "type": "quantitative",
+        "title": "Unemployment Rate (%)",
+        "scale": {
+          "domain": [2, 10]
+        }
+      },
+      "size": {
+        "field": "Underemployment rate",
+        "type": "quantitative",
+        "title": "Underemployment Rate (%)",
+        "scale": {
+          "range": [100, 1000],
+          "domain": [2.5, 5]
+        }
+      },
+      "color": {
+        "field": "State",
+        "type": "nominal",
+        "title": "State",
+        "legend": {
+          "orient": "right"
+        }
+      },
+      "tooltip": [
+        {
+          "field": "State",
+          "type": "nominal",
+          "title": "State"
+        },
+        {
+          "field": "Employed people",
+          "type": "quantitative",
+          "title": "Employed People"
+        },
+        {
+          "field": "Employment to population ratio",
+          "type": "quantitative",
+          "title": "Employment to Population Ratio (%)"
+        },
+        {
+          "field": "Unemployment rate",
+          "type": "quantitative",
+          "title": "Unemployment Rate (%)"
+        },
+        {
+          "field": "Underemployment rate",
+          "type": "quantitative",
+          "title": "Underemployment Rate (%)"
+        },
+        {
+          "field": "Participation rate",
+          "type": "quantitative",
+          "title": "Participation Rate (%)"
+        },
+        {
+          "field": "Year",
+          "type": "ordinal",
+          "title": "Year"
+        }
+      ]
+    },
+    "config": {
+      "view": {
+        "stroke": null
+      },
+      "axis": {
+        "grid": true,
+        "labelFontSize": 12,
+        "titleFontSize": 14
+      }
+    },
+    "background": "#F5F5F5"
+  }  

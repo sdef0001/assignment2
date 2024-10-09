@@ -1,0 +1,68 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 300,
+    "height": 300,
+    "title": {
+        "text": "Participation Rate by State in Australia",
+        "fontSize": 20,
+        "font": "Arial",
+        "anchor": "start",
+        "color": "black"
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/sdef0001/assignment1/main/states.geojson",
+        "format": {
+            "type": "json",
+            "property": "features"
+        }
+    },
+    "transform": [
+        {
+            "lookup": "properties.STATE_NAME",
+            "from": {
+                "data": {
+                    "url": "https://raw.githubusercontent.com/sdef0001/assignment1/main/data.csv",
+                    "format": {
+                        "type": "csv"
+                    }
+                },
+                "key": "State",
+                "fields": [
+                    "Participation rate"
+                ]
+            }
+        }
+    ],
+    "projection": {
+        "type": "mercator"
+    },
+    "mark": {
+        "type": "geoshape",
+        "stroke": "white",
+        "strokeWidth": 2
+    },
+    "encoding": {
+        "color": {
+            "field": "Participation rate",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "magma"
+            },
+            "title": "Participation Rate (%)"
+        },
+        "tooltip": [
+            {
+                "field": "properties.STATE_NAME",
+                "type": "nominal",
+                "title": "State"
+            },
+            {
+                "field": "Participation rate",
+                "type": "quantitative",
+                "title": "Participation Rate (%)"
+            }
+        ]
+    },
+    "config": {},
+    "background": "#F5F5F5"
+}
