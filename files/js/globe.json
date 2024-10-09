@@ -6,7 +6,7 @@
         "text": "Global Unemployment Rates in 2023",
         "fontSize": 20,
         "font": "Arial",
-        "anchor": "start",
+        "anchor": "middle",
         "color": "black"
     },
     "projection": {
@@ -85,7 +85,8 @@
                     {
                         "field": "Unemployment_Rate",
                         "title": "Unemployment Rate (%)",
-                        "type": "quantitative"
+                        "type": "quantitative",
+                        "format": ".2f"
                     }
                 ]
             }

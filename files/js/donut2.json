@@ -46,6 +46,7 @@
         "color": {
             "field": "occupation",
             "type": "nominal",
+            "scale": { "scheme": "magma" },
             "legend": {
                 "title": "Occupation"
             }
@@ -64,7 +65,7 @@
         ]
     },
     "title": {
-        "text": "Australian Labor Market Trends (2020-2024)",
+        "text": "Employment Proportion by Industry",
         "fontSize": 20,
         "color": "black"
       },

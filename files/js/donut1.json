@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "A donut chart showing the distribution of JobSeeker Payment and Youth Allowance recipients by age group for different years.",
     "title": {
-        "text": "Australian Labor Market Trends (2020-2024)",
+        "text": "Proportion of JobSeeker Recipients by Age Group",
         "fontSize": 20,
         "color": "black"
       },
@@ -203,6 +203,7 @@
         "color": {
             "field": "age_group",
             "type": "nominal",
+            "scale": { "scheme": "magma" },
             "legend": {
                 "title": "Age Group"
             }

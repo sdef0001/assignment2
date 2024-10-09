@@ -1,12 +1,12 @@
 {
     "$schema": "https://vega.github.io/schema/vega/v5.2.json",
     "title": {
-        "text": "Australian Labor Market Trends (2020-2024)",
+        "text": "Australian Labor Market Transitions: 2022 to 2023",
         "fontSize": 20,
         "color": "black"
       },
-    "height": 300,
-    "width": 600,
+    "height": 400,
+    "width": 800,
     "data": [
         {
             "name": "rawData",
@@ -373,7 +373,7 @@
         {
             "name": "color",
             "type": "ordinal",
-            "range": "category",
+            "range": {"scheme": "magma"},
             "domain": {
                 "data": "rawData",
                 "field": "stk1"
