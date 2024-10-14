@@ -1,0 +1,158 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A slope graph linking male and female employment rates across different countries.",
+  "width": 700,
+  "height": 500,
+  "data": {
+    "url": "https://raw.githubusercontent.com/sdef0001/assignment1/refs/heads/main/male_female_formatted.csv",
+    "format": {"type": "csv"}
+  },
+  "params": [
+    {
+      "name": "yearSelector",
+      "bind": {
+        "input": "select",
+        "options": [2015, 2016, 2017, 2018, 2019, 2020],
+        "name": "Select Year: "
+      },
+      "value": 2020
+    },
+    {
+      "name": "metricSelector",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Employment to population ratio",
+          "Labour Force Participation Rate",
+          "Vulnerable Employment"
+        ],
+        "name": "Select Metric: "
+      },
+      "value": "Employment to population ratio"
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.Year == yearSelector"
+    },
+    {
+      "filter": "datum.Metric == metricSelector"
+    },
+    {
+      "calculate": "datum.Gender == 'Female' ? 'Female' : 'Male'",
+      "as": "GenderLabel"
+    },
+    {
+      "calculate": "datum.Country === 'Australia' ? 'Australia' : datum.Country === 'New Zealand' ? 'New Zealand' : datum.Country === 'United States' ? 'United States' : datum.Country === 'United Kingdom' ? 'United Kingdom' : datum.Country === 'China' ? 'China' : datum.Country === 'Canada' ? 'Canada' : 'Other Countries'",
+      "as": "CountryGroup"
+    },
+    {
+      "calculate": "metricSelector + '  ' + format(datum.Value, '.2f')",
+      "as": "MetricValue"
+    }
+  ],
+  "layer": [
+    {
+      "transform": [
+        {"filter": "datum.CountryGroup === 'Other Countries'"}
+      ],
+      "mark": {
+        "type": "line",
+        "point": false,
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {"field": "GenderLabel", "type": "nominal", "axis": {"title": null}},
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "title": {"signal": "metricSelector"}
+        },
+        "detail": {"field": "Country"},
+        "color": {"value": "lightgray"},
+        "opacity": {"value": 0.4}
+      }
+    },
+    {
+      "transform": [
+        {"filter": "datum.CountryGroup !== 'Other Countries' && datum.CountryGroup !== 'Australia'"}
+      ],
+      "mark": {
+        "type": "line",
+        "point": {"filled": true, "size": 50},
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {"field": "GenderLabel", "type": "nominal"},
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "title": {"signal": "metricSelector"}
+        },
+        "detail": {"field": "Country"},
+        "color": {
+          "field": "CountryGroup",
+          "type": "nominal",
+          "scale": {
+            "domain": ["New Zealand", "United States", "United Kingdom", "China", "Canada", "Australia", "Other Countries"],
+            "range": ["orange", "green", "#31688e", "blue", "red", "#440154", "lightgray"]
+          },
+          "legend": {"title": "Country"}
+        },
+        "opacity": {"value": 0.3},
+        "tooltip": [
+          {"field": "Country", "type": "nominal", "title": "Country"},
+          {"field": "GenderLabel", "type": "nominal", "title": "Gender"},
+          {"field": "MetricValue", "type": "nominal", "title": "Rate"}
+        ]
+      }
+    },
+    {
+      "transform": [
+        {"filter": "datum.CountryGroup === 'Australia'"}
+      ],
+      "mark": {
+        "type": "line",
+        "point": {"filled": true, "size": 50},
+        "strokeWidth": 4
+      },
+      "encoding": {
+        "x": {"field": "GenderLabel", "type": "nominal"},
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "title": {"signal": "metricSelector"}
+        },
+        "detail": {"field": "Country"},
+        "color": {
+          "value": "#440154"
+        },
+        "opacity": {"value": 1},
+        "tooltip": [
+          {"field": "Country", "type": "nominal", "title": "Country"},
+          {"field": "GenderLabel", "type": "nominal", "title": "Gender"},
+          {"field": "MetricValue", "type": "nominal", "title": "Rate"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "rule", "color": "gray", "size": 2},
+      "encoding": {
+        "x": {"field": "GenderLabel", "type": "nominal"}
+      }
+    }
+  ],
+  "config": {
+    "axisX": {"labelAngle": 0, "title": null},
+    "view": {"stroke": null},
+    "axis": {
+      "grid": true,
+      "labelFontSize": 13,
+      "titleFontSize": 14
+    },
+    "legend": {
+      "titleFontSize": 13
+    }
+  },
+  "background": "#F5F5F5"
+}
