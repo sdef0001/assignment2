@@ -48,7 +48,7 @@
             "type": "nominal",
             "scale": { "scheme": "magma" },
             "legend": {
-                "title": "Occupation"
+                "title": "Industry"
             }
         },
         "tooltip": [
@@ -64,13 +64,17 @@
             }
         ]
     },
-    "title": {
-        "text": "Employment Proportion by Industry",
-        "fontSize": 20,
-        "color": "black"
-      },
       "width": 200,
       "height": 200,
-    "config": {},
-    "background": "#F5F5F5"
+    "config": {
+        "axis": {
+            "grid": true,
+            "labelFontSize": 12,
+            "titleFontSize": 14
+          },
+          "legend": {
+            "titleFontSize": 13
+          }
+    },
+    "background": "#f0f0f0"
 }

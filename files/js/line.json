@@ -1,11 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Multi-series line chart for unemployment rate by country from 1991 to 2023.",
-  "title": {
-    "text": "Unemployment Rate by Country (1991-2023)",
-    "anchor": "middle",
-    "fontSize": 18
-  },
   "data": {
     "url": "https://raw.githubusercontent.com/sdef0001/assignment1/refs/heads/main/line_chart.csv",
     "format": {"type": "csv"}
@@ -131,6 +126,16 @@
       }
     }
   ],
-  "config": {"view": {"stroke": null}},
+  "config": {
+    "view": {"stroke": null},
+    "axis": {
+      "grid": true,
+      "labelFontSize": 12,
+      "titleFontSize": 14
+    },
+    "legend": {
+      "titleFontSize": 13
+    }
+  },
   "background": "#F5F5F5"
 }

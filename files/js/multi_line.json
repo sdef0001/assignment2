@@ -95,13 +95,15 @@
         "value": 2.5
       }
     },
-    "title": {
-      "text": "Employment Data for Australian Skill Levels Over Time",
-      "fontSize": 20,
-      "font": "Arial",
-      "anchor": "start",
-      "color": "black"
+    "config": {
+      "axis": {
+        "grid": true,
+        "labelFontSize": 12,
+        "titleFontSize": 14
+      },
+      "legend": {
+        "titleFontSize": 13
+      }
     },
-    "config": {},
     "background": "#F5F5F5"
   }  

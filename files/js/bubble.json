@@ -5,12 +5,7 @@
     "url": "https://raw.githubusercontent.com/sdef0001/assignment1/refs/heads/main/bubble_data.csv",
     "format": {"type": "csv"}
   },
-  "title": {
-    "text": "Australian Labor Market Trends (2020-2024)",
-    "fontSize": 30,
-    "color": "black"
-  },
-  "width": 700,
+  "width": 600,
   "height": 400,
   "params": [
     {
@@ -115,6 +110,9 @@
       "grid": true,
       "labelFontSize": 12,
       "titleFontSize": 14
+    },
+    "legend": {
+      "titleFontSize": 13
     }
   },
   "background": "#F5F5F5"

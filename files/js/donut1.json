@@ -1,11 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "A donut chart showing the distribution of JobSeeker Payment and Youth Allowance recipients by age group for different years.",
-    "title": {
-        "text": "Proportion of JobSeeker Recipients by Age Group",
-        "fontSize": 20,
-        "color": "black"
-      },
       "width":  200,
       "height": 200,
     "params": [
@@ -221,6 +216,15 @@
             }
         ]
     },
-    "config": {},
-    "background": "#F5F5F5"
+    "config": {
+        "axis": {
+            "grid": true,
+            "labelFontSize": 12,
+            "titleFontSize": 14
+          },
+          "legend": {
+            "titleFontSize": 13
+          }
+    },
+    "background": "#f0f0f0"
 }

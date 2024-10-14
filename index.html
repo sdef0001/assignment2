@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Australian Labor Market Overview</title>
+    <title>Australian Labour Market Overview</title>
 
     <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
@@ -21,37 +21,47 @@
             <div class="header">
                 <h1>Australian Labour Market</h1>
             </div>
-            <div class="intro">
-                <div class="text" style="padding-left: 50px; padding-right: 100px;">
-                    <h1 style="font-size: 30px;">Target</h1>
+            <div class="intro" style="padding-left: 50px; padding-right: 50px;">
+                <div class="text">
+                    <h1 style="font-size: 30px;">Key Insights</h1>
                     <!-- <img src="./files/images/icon1.png" alt="Icon 1" class="inline-icon" style="width: 70px; height: 70px;">  -->
                     <p>
-                        The Australian labor market is a key driver of the nation's economic stability, representing
+                        The Australian labour market is a key driver of the nation's economic stability, representing
                         diverse industries and employment sectors. Metrics such as <strong
                             style="color: blue ;">unemployment rates</strong> and <strong>employment
                             participation</strong> help understand workforce health.
                     </p>
                     <!-- <img src="./files/images/icon2.png" alt="Icon 2" class="inline-icon" style="width: 70px; height: 70px;">  -->
                     <p>
-                        Understanding labor market trends is critical for addressing economic challenges. This dashboard
+                        Understanding labour market trends is critical for addressing economic challenges. This
+                        dashboard
                         highlights employment and unemployment trends, participation rates, and workforce transitions
                         across various regions of Australia.
                     </p>
                 </div>
                 <center>
-                    <img src="./files/images/aus.png" alt="Australia Logo" style="width: 400px;">
+                    <img src="./files/images/aus.png" alt="Australia Logo" style="width: 350px;">
                 </center>
             </div>
         </div>
     </div>
 
-    <div class="container">
+    <!-- Arrow between sections -->
+    <div style="text-align: center; margin-top: -15px; z-index: 10;">
+        <img src="./files/images/right.png" alt="Arrow pointing down"
+            style="width: 75px; height: 75px; transform: rotate(90deg);">
+    </div>
+
+    <div class="container" style="margin-top: -30px;">
         <div class="sub_container">
             <div class="header">
-                <h1>Employment Trends</h1>
+                <h1 style="font-size: 3.0em;">The Rise of Skilled Workers</h1>
             </div>
 
             <center>
+                <div class="text">
+                    <h1 style="font-size: 30px; color: black;">Australian Labour Market Trends (2020-2024)</h1>
+                </div>
                 <!-- <span class="info-icon" onclick="openModal()">&#9432;</span>
                 <div id="myModal" class="modal">
                     <div class="modal-content">
@@ -59,35 +69,90 @@
                         <p>This is your informational modal with details about Australian labor market trends.</p>
                     </div>
                 </div> -->
-                <div style="text-align: center; margin-top: 40px;" id="vis1">
+
+                <!-- Annotation box placed in the top right of the visual -->
+                <div class="annotation"
+                    style="position: absolute; top: 935px; right: 415px; background-color: #f0f0f0; padding: 5px 20px; border-radius: 5px; width: 300px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); z-index: 10;">
+                    <p style="font-size: 0.85em; color: black; text-align: center; margin: 0;">
+                        <em>Unemployment rates decreased significantly while employment-to-population ratios improved,
+                            highlighting a strong recovery across all states.</em>
+                    </p>
+                    <div class="arrow-down"
+                        style="position: absolute; top: 100%; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-top: 10px solid black; z-index: 10;">
+                    </div>
+                </div>
+
+                <div style="text-align: center;" id="vis1">
                 </div>
             </center>
 
-            <div class="intro">
+            <div class="intro"
+                style="margin-top: 25px; margin-bottom: 25px; background-color: #F5F5F5; background-color: rgba(255, 255, 150, 0.175); ">
+                <!-- <img src="./files/images/icon3.png" alt="Icon 3" class="inline-icon" style="width: 70px; height: 70px;">  -->
+                <img src="./files/images/information.png" alt="Icon 4" class="inline-icon"
+                    style="width: 45px; height: 45px; margin-left: 75px;">
+                <p
+                    style="margin-left: 15px; margin-right: 75px; text-align: left; margin-top: 10px;  margin-bottom: 10px;">
+                    Year level slider to show changes in employment and unemployment rates over time for Australian
+                    states.
+                </p>
+            </div>
+
+            <div class="intro" style="margin-top: 25px; margin-bottom: 25px;">
                 <!-- <img src="./files/images/icon3.png" alt="Icon 3" class="inline-icon" style="width: 70px; height: 70px;">  -->
                 <img src="./files/images/icon1.png" alt="Icon 4" class="inline-icon"
-                    style="width: 90px; height: 90px; margin-left: 50px;">
-                <p style="margin-left: 100px; margin-right: 100px; text-align: center;">
-                    In 2020, most Australian states had higher unemployment rates (ranging between 6% and 8%) with lower
-                    employment-to-population ratios, particularly in states like South Australia and Tasmania. <br> <br>
-                    By 2024, there is a noticeable decrease in unemployment rates across the board, with an increase in
-                    the employment-to-population ratio, indicating a significant labor market recovery, particularly in
-                    states such as the Australian Capital Territory and Victoria.
+                    style="width: 120px; height: 120px; margin-left: 75px;">
+                <p
+                    style="margin-left: 25px; margin-right: 75px; text-align: left; margin-top: 25px;  margin-bottom: 25px;">
+                    In 2020, Australian states like South Australia and Tasmania experienced higher unemployment rates
+                    (6%-8%) and lower employment-to-population ratios, but by 2024, there was a significant labour
+                    market recovery with lower unemployment and higher employment rates, especially in the Australian
+                    Capital Territory and Victoria.
                 </p>
             </div>
 
             <hr>
 
+            <center>
+                <div class="text">
+                    <h1 style="font-size: 30px; color: black;">Participation Rate by State in Australia</h1>
+                </div>
+            </center>
+
+            <div class="intro"
+                style="margin-top: 25px; margin-bottom: 25px; background-color: #F5F5F5; background-color: rgba(255, 255, 150, 0.175); ">
+                <!-- <img src="./files/images/icon3.png" alt="Icon 3" class="inline-icon" style="width: 70px; height: 70px;">  -->
+                <img src="./files/images/information.png" alt="Icon 4" class="inline-icon"
+                    style="width: 45px; height: 45px; margin-left: 75px;">
+                <p
+                    style="margin-left: 15px; margin-right: 50px; text-align: left; margin-top: 10px;  margin-bottom: 10px;">
+                    <strong>What is participation rate? </strong> <br> % of the working-age population that is either
+                    employed or actively seeking work.
+                </p>
+            </div>
+
             <div class="intro">
-                <p style="margin-left: 100px; margin-right: 100px; text-align: center;">
-                    This map shows the labor force participation rate across different states in Australia, with
-                    Victoria having a participation rate of 68.1%. <br> <br>
+                <p style="margin-left: 25px; margin-right: 50px; text-align: right;">
                     There is a noticeable variation in participation rates, with states like the Northern Territory and
-                    Western Australia showing higher rates (above 70%) compared to states like Tasmania and South
+                    Western Australia showing higher rates (above 70%). <br> <br>
+                    This is unlike states like Tasmania and South
                     Australia, which have lower participation rates (closer to 62-64%).
                 </p>
+
+                <!-- Annotation box placed near the top left for Tasmania -->
+                <div class="annotation"
+                    style="position: absolute; top: 1950px; right: 375px; background-color: #f0f0f0; padding: 10px 20px; border-radius: 5px; width: 250px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); z-index: 10;">
+                    <p style="font-size: 0.85em; color: black; text-align: center; margin: 0;">
+                        <em>Tasmania has one of the lowest participation rates, with values close to 62%, as shown in
+                            black.</em>
+                    </p>
+                    <!-- Arrow pointing down to Tasmania -->
+                    <div class="arrow-down"
+                        style="position: absolute; top: 100%; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-top: 10px solid black; z-index: 10;">
+                    </div>
+                </div>
                 <center>
-                    <div style="text-align: center; margin-top: 40px;" id="vis6">
+                    <div style="text-align: center; margin-top: 20px;" id="vis6">
                     </div>
                 </center>
             </div>
@@ -95,44 +160,104 @@
             <hr>
 
             <center>
-                <div style="text-align: center; margin-top: 40px;" id="vis8">
+                <div class="text">
+                    <h1 style="font-size: 30px; color: black;">Employment in Australia Based On Skill Levels</h1>
                 </div>
             </center>
 
-            <div class="intro">
+            <center>
+                <div style="text-align: center; margin-top: 10px;" id="vis8">
+                </div>
+            </center>
+
+            <div class="intro"
+                style="margin-top: 25px; margin-bottom: 25px; background-color: #F5F5F5; background-color: rgba(255, 255, 150, 0.175); ">
+                <!-- <img src="./files/images/icon3.png" alt="Icon 3" class="inline-icon" style="width: 70px; height: 70px;">  -->
+                <img src="./files/images/information.png" alt="Icon 4" class="inline-icon"
+                    style="width: 45px; height: 45px; margin-left: 75px;">
+                <p
+                    style="margin-left: 15px; margin-right: 75px; text-align: left; margin-top: 10px;  margin-bottom: 10px;">
+                    The toggle allows users to select a specific skill level, which is then highlighted in the graph.
+                </p>
+            </div>
+
+            <!-- Annotation for the Global Financial Crisis (GFC) in 2008 -->
+            <div class="annotation"
+                style="position: absolute; top: 2475px; left: 290px; background-color: #f0f0f0; padding: 10px 20px; border-radius: 5px; width: 180px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); z-index: 10;">
+                <p style="font-size: 0.85em; color: black; text-align: center; margin: 0;">
+                    <em>Global Financial Crisis (2008): Sharp decline in employment across all skill levels.</em>
+                </p>
+                <!-- Arrow pointing to 2008 on the graph -->
+                <div class="arrow-down"
+                    style="position: absolute; top: 100%; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-top: 10px solid black;">
+                </div>
+            </div>
+
+            <!-- Annotation for the COVID-19 Pandemic in 2020 -->
+            <div class="annotation"
+                style="position: absolute; top: 2475px; left: 680px; background-color: #f0f0f0; padding: 10px 20px; border-radius: 5px; width: 180px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); z-index: 10;">
+                <p style="font-size: 0.85em; color: black; text-align: center; margin: 0;">
+                    <em>COVID-19 Pandemic (2020): A steep drop followed by a rapid recovery in employment.</em>
+                </p>
+                <!-- Arrow pointing to 2020 on the graph -->
+                <div class="arrow-down"
+                    style="position: absolute; top: 100%; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-top: 10px solid black;">
+                </div>
+            </div>
+
+
+            <div class="intro" style="margin-top: 25px;">
+
                 <img src="./files/images/icon2.png" alt="Icon 4" class="inline-icon"
                     style="width: 90px; height: 90px; margin-left: 50px;">
 
-                <p style="margin-left: 100px; margin-right: 100px; text-align: center;">
+                <p style="margin-left: 25px; margin-right: 75px; text-align: left;">
                     The graph shows that employment for individuals with higher qualifications (Skill Level 1 - Bachelor
-                    degree or higher) has consistently remained higher compared to other skill levels, peaking notably
-                    around 2011 and 2021. <br> <br>
-                    In contrast, lower skill levels (Skill Levels 4 and 5) exhibit more stable but lower employment
-                    numbers, with fewer fluctuations over the time period, indicating a possible preference in the labor
-                    market for higher-skilled workers.
+                    degree or higher) has consistently been higher, peaking around 2011 and 2021, while lower skill
+                    levels (Skill Levels 4 and 5) exhibit more stable but lower employment, suggesting a labour market
+                    preference for higher-skilled workers.
                 </p>
             </div>
 
         </div>
     </div>
 
-    <div class="container">
+    <!-- Arrow between sections -->
+    <div style="text-align: center; margin-top: -15px; z-index: 10;">
+        <img src="./files/images/right.png" alt="Arrow pointing down"
+            style="width: 75px; height: 75px; transform: rotate(90deg);">
+    </div>
+
+    <div class="container" style="margin-top: -30px;">
         <div class="sub_container">
             <div class="header">
-                <h1>Unemployment Trends</h1>
+                <h1 style="font-size: 3.0em;">Tracking Australia's Job Markets</h1>
             </div>
 
-            <div class="intro">
-                <img src="./files/images/icon3.png" alt="Icon 5" class="inline-icon" style="width: 70px; height: 70px;">
-                <p>
-                    This graph shows the unemployment trends from 1991 to 2023 across several countries, highlighting
-                    fluctuations in unemployment rates over time.
+            <div class="intro" style="margin-top: 25px; margin-bottom: 25px;">
+
+                <img src="./files/images/icon3.png" alt="Icon 4" class="inline-icon"
+                    style="width: 90px; height: 90px; margin-left: 50px;">
+
+                <p style="margin-left: 25px; margin-right: 75px; text-align: left;">
+                    The graph below effectively highlights the economic performance and labour market resilience of
+                    different nations, making it easy to spot global patterns, key events (like the 2008 financial
+                    crisis and COVID-19), and Australia's relative stability.
                 </p>
-                <img src="./files/images/icon4.png" alt="Icon 6" class="inline-icon" style="width: 70px; height: 70px;">
-                <p>
-                    Australia, indicated by the bold line, shows a consistent decline in unemployment after peaking in
-                    the early 1990s, with a sharp rise around the 2020 period likely reflecting the impact of the
-                    COVID-19 pandemic, followed by a rapid recovery.
+            </div>
+
+            <center>
+                <div class="text">
+                    <h1 style="font-size: 30px; color: black;">Unemployment Rate by Country (1991-2023)</h1>
+                </div>
+            </center>
+
+            <!-- Annotation box placed in the top right of the visual -->
+            <div class="annotation"
+                style="position: absolute; top: 4025px; left: 275px; background-color: #f0f0f0; padding: 5px 20px; border-radius: 5px; width: 300px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); z-index: 10;">
+                <p style="font-size: 0.85em; color: black; text-align: center; margin: 0;">
+                    <em>Australia's unemployment rate steadily declined since 1991, showing resilience even during major
+                        global downturns.</em>
                 </p>
             </div>
 
@@ -142,8 +267,36 @@
                 </div>
             </div>
 
+            <div class="intro"
+                style="margin-top: 25px; margin-bottom: 25px; background-color: #F5F5F5; background-color: rgba(255, 255, 150, 0.175); ">
+                <!-- <img src="./files/images/icon3.png" alt="Icon 3" class="inline-icon" style="width: 70px; height: 70px;">  -->
+                <img src="./files/images/information.png" alt="Icon 4" class="inline-icon"
+                    style="width: 45px; height: 45px; margin-left: 75px;">
+                <p
+                    style="margin-left: 15px; margin-right: 75px; text-align: left; margin-top: 10px;  margin-bottom: 10px;">
+                    Unemployment rate has shown consistent downward trend since the 1990s, with notable stability around
+                    5-6% in recent years
+                </p>
+            </div>
+
             <hr>
 
+            <center>
+                <div class="text">
+                    <h1 style="font-size: 30px; color: black;">Global Unemployment Rates in 2023</h1>
+                </div>
+            </center>
+
+            <div class="intro" style="margin-top: 25px; margin-bottom: 25px;">
+                <p style="margin-left: 75px; margin-right: 40px; text-align: left; width: 70%;">
+                    This map highlights global unemployment rates in 2023. <br>
+                    Australia, along with other regions like North America and <br> parts of Asia exhibit some of the
+                    lowest unemployment percentages. <br>
+                    This reflects strong labour markets in these areas.
+                </p>
+                <img src="./files/images/icon5.png" alt="Icon 4" class="inline-icon"
+                    style="width: 90px; height: 90px; padding-right: 40px">
+            </div>
 
             <div class="header">
                 <center>
@@ -153,73 +306,162 @@
                 </center>
             </div>
 
-            <div class="intro">
-                <img src="./files/images/icon5.png" alt="Icon 6" class="inline-icon" style="width: 100px; height: 100px; padding-left: 200px">
-
-                <p style="text-align: center;">
-                    This map highlights global unemployment rates in 2023. <br>
-                    Australia, along with other regions like North America and <br> parts of Asia exhibit some of the lowest unemployment percentages. <br>
-                    This reflects strong labor markets in these areas.
+            <!-- Annotation box placed in the top right of the visual -->
+            <div class="annotation"
+                style="position: absolute; top: 4850px; right: 195px; background-color: #f0f0f0; padding: 5px 20px; border-radius: 5px; width: 250px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); z-index: 10;">
+                <p style="font-size: 0.85em; color: black; text-align: center; margin: 0;">
+                    <em>Southern Africa experiences the highest unemployment rates, with some countries exceeding 30%,
+                        highlighting severe economic challenges.</em>
                 </p>
             </div>
+
+
+            <!-- Annotation box placed in the top right of the visual -->
+            <div class="annotation"
+                style="position: absolute; top: 4565px; left: 200px; background-color: #f0f0f0; padding: 5px 20px; border-radius: 5px; width: 300px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); z-index: 10;">
+                <p style="font-size: 0.85em; color: black; text-align: center; margin: 0;">
+                    <em>European countries show relatively low unemployment rates, with most nations under 10%,
+                        reflecting a more stable labour market.</em>
+                </p>
+            </div>
+
+            <div class="intro"
+                style="margin-top: -10px; margin-bottom: 25px; background-color: #F5F5F5; background-color: rgba(255, 255, 150, 0.175); ">
+                <!-- <img src="./files/images/icon3.png" alt="Icon 3" class="inline-icon" style="width: 70px; height: 70px;">  -->
+                <img src="./files/images/information.png" alt="Icon 4" class="inline-icon"
+                    style="width: 45px; height: 45px; margin-left: 75px;">
+                <p
+                    style="margin-left: 15px; margin-right: 75px; text-align: left; margin-top: 10px;  margin-bottom: 10px;">
+                    <strong>How does this compare with Australia?</strong> <br>
+                    Australia’s unemployment rate is low, similar to Canada, both under 10%, contrasting sharply with
+                    South Africa, where rates exceed 30%.
+                </p>
+            </div>
+
+            <hr>
 
         </div>
     </div>
 
-    <div class="container">
+    <!-- Arrow between sections -->
+    <div style="text-align: center; margin-top: -15px; z-index: 10;">
+        <img src="./files/images/right.png" alt="Arrow pointing down"
+            style="width: 75px; height: 75px; transform: rotate(90deg);">
+    </div>
+
+    <div class="container" style="margin-top: -30px;">
         <div class="sub_container">
             <div class="header">
-                <h1>Australia's Labour Recovery</h1>
+                <h1 style="font-size: 3.0em;">Australia's COVID Labour Recovery</h1>
+            </div>
+
+            <div class="intro"
+                style="margin-top: 20px; margin-bottom: 25px; background-color: #F5F5F5; background-color: rgba(255, 255, 150, 0.175); ">
+                <!-- <img src="./files/images/icon3.png" alt="Icon 3" class="inline-icon" style="width: 70px; height: 70px;">  -->
+                <img src="./files/images/information.png" alt="Icon 4" class="inline-icon"
+                    style="width: 45px; height: 45px; margin-left: 75px;">
+                <p
+                    style="margin-left: 15px; margin-right: 75px; text-align: left; margin-top: 10px;  margin-bottom: 10px;">
+                    <strong>How to interpret these graphs? </strong> <br>
+                    By analyzing trends from 2020 to 2024, users can better understand shifts in workforce demographics
+                    and industry employment patterns, aiding in workforce planning and policy decisions.
+                </p>
             </div>
 
             <div class="two-column-layout">
                 <!-- First Graph Section -->
-                <div class="graph-container">
-                    <div id="vis3"></div>
-                    <p class="graph-text">
-                        <img src="./files/images/icon6.png" alt="Icon 7" class="inline-icon"
-                            style="width: 70px; height: 70px; margin-bottom: 20px"> <br>
-                        Graph 1: This graph shows the employment and unemployment trends in Australia from 2020 to 2024.
-                        It highlights the underemployment rates and how they have shifted over the years.
+                <div style="background-color: #f0f0f0; border-radius: 20px;">
+                    <center>
+                        <div class="text">
+                            <h1 style="font-size: 30px; color: black;">Proportion of JobSeeker Recipients by Age Group
+                            </h1>
+                        </div>
+                    </center>
+                    <center>
+                        <div id="vis3"></div>
+                    </center>
+                    <hr style="width: 75%; margin-top: 20px;">
+                    <p class="graph-text" style="text-align: center; margin-top: 5px; padding: 30px;">
+                        From 2020 to 2023, the proportion of JobSeeker recipients in the 35-44 age group slightly
+                        increased, indicating a potential rise in unemployment or financial aid reliance within this age
+                        demographic during this period.
                     </p>
                 </div>
 
                 <!-- Second Graph Section -->
-                <div class="graph-container">
-                    <div id="vis4"></div>
-                    <p class="graph-text">
-                        <img src="./files/images/icon7.png" alt="Icon 8" class="inline-icon" style="width: 70px; height: 70px; margin-bottom: 20px"> <br>
-                        Graph 2: This graph compares unemployment rates by state, showing regional differences and how
-                        unemployment has evolved over time.
+                <div style="background-color: #f0f0f0; border-radius: 20px;">
+                    <center>
+                        <div class="text">
+                            <h1 style="font-size: 30px; color: black; padding: 10px;">Employment Proportion by Industry
+                                Sector</h1>
+                        </div>
+                    </center>
+
+                    <!-- Annotation box placed in the top right of the visual -->
+                    <div class="annotation"
+                        style="position: absolute; top: 5785px; right: 200px; background-color: #f0f0f0; padding: 5px 20px; border-radius: 5px; width: 200px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); z-index: 10;">
+                        <p style="font-size: 0.85em; color: black; text-align: center; margin: 0;">
+                            <em>There is diverse distribution of employment across key industries!</em>
+                        </p>
+                    </div>
+
+                    <center>
+                        <div id="vis4"></div>
+                    </center>
+                    <hr style="width: 75%; margin-top: 45px;">
+                    <p class="graph-text" style="text-align: center; margin-top: 5px; padding: 30px;">
+                        The Health Care and Social Assistance sector accounts for 15.63% of employment, highlighting its
+                        importance in Australia's workforce, driven by growing healthcare needs and social services
+                        demand.
                     </p>
                 </div>
             </div>
             <hr>
 
+            <center>
+                <div class="text">
+                    <h1 style="font-size: 30px; color: black;">Australian Labor Market Transitions: 2022 to 2023</h1>
+                </div>
+            </center>
+
+            <div class="intro"
+                style="margin-top: 20px; margin-bottom: 25px; background-color: #F5F5F5; background-color: rgba(255, 255, 150, 0.175); ">
+                <!-- <img src="./files/images/icon3.png" alt="Icon 3" class="inline-icon" style="width: 70px; height: 70px;">  -->
+                <img src="./files/images/information.png" alt="Icon 4" class="inline-icon"
+                    style="width: 45px; height: 45px; margin-left: 75px;">
+                <p
+                    style="margin-left: 15px; margin-right: 75px; text-align: left; margin-top: 10px;  margin-bottom: 10px;">
+                    <strong>What does this diagram mean? </strong> <br>
+                    This Sankey diagram shows workforce transitions in Australia from 2022 to 2023, highlighting how
+                    individuals moved between full-time, part-time employment, unemployment, and being out of the labor
+                    force.
+                </p>
+            </div>
+
             <div class="two-column-layout">
                 <!-- First Graph Section -->
-                <div class="graph-container">
+                <div style="padding-top: 5px; padding-bottom: 25px; text-align: center;">
                     <div id="vis5"></div>
-                    <div style="margin-left: 20px; margin-right: 20px">
-                                        <!-- Second Graph Section -->
-                    <img src="./files/images/icon8.png" alt="Icon 8" class="inline-icon" style="width: 70px; height: 70px;">
-                <p class="graph-text" style="margin-top: 10px;">
-                    This Sankey diagram visualizes the movement of Australian workers between different labor market
-                    categories from 2022 to 2023.
-                    <br><br>
-                    The diagram reveals that there was significant flow from "unemployed in 2022" to "employed
-                    part-time/full-time in 2023," indicating a potential improvement in labor conditions.
 
-
-                </p>
+                    <div class="intro" style="margin-top: 25px;">
+                        <p style="margin-left: 75px; margin-right: 40px; text-align: left; width: 70%;">
+                            The diagram reveals that there was significant flow from "unemployed in 2022" to "employed
+                            part-time/full-time in 2023," indicating a potential improvement in labour conditions.
+                        </p>
+                        <img src="./files/images/icon8.png" alt="Icon 4" class="inline-icon"
+                            style="width: 90px; height: 90px; padding-right: 40px">
                     </div>
+
                 </div>
             </div>
 
-            <div class="sub_container" style="margin-top: -175px">
+            <div class="sub_container">
                 <hr>
                 <div class="header" style="max-height: 50px;">
-                    <p>Shean De Fonseka | 13th October 2024 | ABS & WDI</p>
+                    <p>Shean De Fonseka | 15th October 2024 | 
+                        <a href="https://www.abs.gov.au/statistics/labour/employment-and-unemployment" target="_blank" style="color: inherit; text-decoration: underline;">ABS: Labour Statistics</a> & 
+                        <a href="https://datacatalog.worldbank.org/search/dataset/0037712/World-Development-Indicators" target="_blank" style="color: inherit; text-decoration: underline;">WBG: World Development Indicators</a>
+                    </p>
                 </div>
             </div>
 
@@ -232,11 +474,11 @@
         function openModal() {
             document.getElementById("myModal").style.display = "block";
         }
-    
+
         function closeModal() {
             document.getElementById("myModal").style.display = "none";
         }
-    
+
         var spec1 = "./files/js/bubble.json";
         var spec2 = "./files/js/line.json";
         var spec3 = "./files/js/donut1.json";
@@ -245,7 +487,7 @@
         var spec6 = "./files/js/aus.json";
         var spec7 = "./files/js/globe.json";
         var spec8 = "./files/js/multi_line.json";
-    
+
         vegaEmbed('#vis1', spec1, { "actions": false })
         vegaEmbed('#vis2', spec2, { "actions": false })
         vegaEmbed('#vis3', spec3, { "actions": false })
@@ -254,7 +496,7 @@
         vegaEmbed('#vis6', spec6, { "actions": false })
         vegaEmbed('#vis7', spec7, { "actions": false })
         vegaEmbed('#vis8', spec8, { "actions": false })
-    
+
     </script>
 </body>
 
