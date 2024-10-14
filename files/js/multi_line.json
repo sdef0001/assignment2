@@ -1,27 +1,27 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 700,
+    "width": 650,
     "height": 400,
     "description": "A multiple line chart showing the employment data for Australian skill levels over time.",
     "params": [
       {
         "name": "highlight",
-        "value": "Australia skill level 1",
+        "value": "Bachelor Degree or Higher",
         "bind": {
           "input": "select",
           "options": [
-            "Australia skill level 1",
-            "Australia skill level 2",
-            "Australia skill level 3",
-            "Australia skill level 4",
-            "Australia skill level 5"
+            "Bachelor Degree or Higher",
+            "Advanced Diploma",
+            "Certificate IV",
+            "Certificate II",
+            "Secondary Education"
           ],
           "labels": [
-            "Skill Level 1",
-            "Skill Level 2",
-            "Skill Level 3",
-            "Skill Level 4",
-            "Skill Level 5"
+            "Bachelor Degree or Higher",
+            "Advanced Diploma",
+            "Certificate IV",
+            "Certificate II",
+            "Secondary Education"
           ],
           "name": "Select Skill Level to Highlight: "
         }
